@@ -35,7 +35,7 @@
             const aesCbc = new aesjs.ModeOfOperation.cbc(aesjs.utils.hex.toBytes(key), aesjs.utils.hex.toBytes(iv));
             const encryptedBytes = aesjs.utils.hex.toBytes(base64ToHex(enc));
             const decryptedBytes = aesCbc.decrypt(encryptedBytes);
-            return unescape(aesjs.utils.utf8.fromBytes(decryptedBytes).trim().replace(/[^ -~]+/g, ""));
+            return unescape(aesjs.utils.utf8.fromBytes(aesjs.padding.pkcs7.strip(decryptedBytes)));
         };
 
         const decryptQuestion = (req) => {
