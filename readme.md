@@ -198,15 +198,6 @@ Send 	=> {"method": "answer","answer": correctAnswer}
 //---------------------------LOOP 1000 Times---------------------------
 Receive => {"method": "flag","flag":"rtcp{qu1z_4pps_4re_c00l_aeecfa13}"}
 ```
-
-This is how I solved but after we finished the ctf like 16 hours left. I tried other methods one of them is;
-
-```
-final byte[] doFinal = Instance.doFinal(Base64.decode(jsonObject.getString("questionText"), 0));
-```
-
-Hook this method and make it decode correctAnswer and send it from frida. I will write another writeup for it soon.
-
 I hope you can understand idea of this challenge. You can ask any question or recommend better way via discord **enjloezz#7444**. 
 
 References:
