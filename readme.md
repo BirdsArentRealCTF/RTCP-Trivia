@@ -1,5 +1,3 @@
-
-
 ​	Hello, this is enjloezz and I played this ctf with Albytross team. It was great to finish all challenges nearly 16 hours before ctf ended. Thanks to challenge authors it was really fun ctf . I’m not a reverse engineer or any kind of reverser. Please mind that :)
 
 ​	We know its a trivia game and we need to solve 1000 questions to get the flag. But we can’t play it, I don’t know why but intent is closing without waiting the CountDownTimer. I tried couple methods to bypass that but I was unable to do it. After ctf is finished one of my  teammates told me its because of using custom emulator. Game working as intended on android studio emulator with the sdk version from manifest.xml! I wish I knew sooner :(
@@ -129,13 +127,13 @@ This method is always getting same parameter. With this information I don't have
 
 ```java
 private String c(final String s) {
-    final MessageDigest \u0131nstance = MessageDigest.getInstance("SHA-256");
+    final MessageDigest Instance = MessageDigest.getInstance("SHA-256");
     // Important Part
     final StringBuilder sb = new StringBuilder();
     sb.append(s);
     sb.append(":");
     sb.append(this.b);
-    final byte[] digest = \u0131nstance.digest(new String(sb.toString()).getBytes());
+    final byte[] digest = Instance.digest(new String(sb.toString()).getBytes());
     // After this line is just for padding
     final StringBuffer sb2 = new StringBuffer();
     for (int i = 0; i < digest.length; ++i) {
