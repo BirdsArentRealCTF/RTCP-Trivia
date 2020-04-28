@@ -54,19 +54,19 @@ Looks like IV is requestIdentifier but for key we need to make some calculations
 I'm gonna explain the image below line by line bear with me :)
 
 ```java
-final JSONObject jsonObject = new JSONObject(this.d); => Creating JSON-Object from the response.
-final String a = new nx(Game.this.getIntent().getStringExtra("id"), Game.this.getResources()).a(); => Generating a new nx object that taking two parameters. First one is userToken and second one is content.res.Resources object. I will explain why we are sending Resources object. And then call a function in nx class.
-final String string = jsonObject.getString("id"); => Getting ID field from the response.
+final JSONObject jsonObject = new JSONObject(this.d); // => Creating JSON-Object from the response.
+final String a = new nx(Game.this.getIntent().getStringExtra("id"), Game.this.getResources()).a(); // => Generating a new nx object that taking two parameters. First one is userToken and second one is content.res.Resources object. I will explain why we are sending Resources object. And then call a function in nx class.
+final String string = jsonObject.getString("id"); // => Getting ID field from the response.
 final StringBuilder sb = new StringBuilder();
 sb.append(a);
 sb.append(":");
-sb.append(string); => Combine return value of nx.a() method with id field from the response.
-final byte[] a2 = nx.a(sb.toString()); => Send sb variable to nx.a() method and get the return value.
-final byte[] b = nx.b(jsonObject.getString("requestIdentifier")); => Getting requestIdentifier field for using as IV
-final SecretKeySpec secretKeySpec = new SecretKeySpec(a2, "AES"); => Create an AES KEY Object with a2 variable key.
-final IvParameterSpec IvParameterSpec = new IvParameterSpec(b); => Create an IV Parameter Object.
-final Cipher Instance = Cipher.getInstance("AES/CBC/PKCS7Padding"); => Create a Cipher Instance with given specs. "AES-CBC with PKCS7 Padding".
-Instance.init(2, secretKeySpec, IvParameterSpec); => And initialize AES decoder.
+sb.append(string); // => Combine return value of nx.a() method with id field from the response.
+final byte[] a2 = nx.a(sb.toString()); // => Send sb variable to nx.a() method and get the return value.
+final byte[] b = nx.b(jsonObject.getString("requestIdentifier")); // => Getting requestIdentifier field for using as IV
+final SecretKeySpec secretKeySpec = new SecretKeySpec(a2, "AES"); // => Create an AES KEY Object with a2 variable key.
+final IvParameterSpec IvParameterSpec = new IvParameterSpec(b); // => Create an IV Parameter Object.
+final Cipher Instance = Cipher.getInstance("AES/CBC/PKCS7Padding"); // => Create a Cipher Instance with given specs. "AES-CBC with PKCS7 Padding".
+Instance.init(2, secretKeySpec, IvParameterSpec); // => And initialize AES decoder.
 ```
 
 Now we know how its decoding the response. Only thing we don't know is how nx class works. Like I said I'm not reverse engineer so for understanding this part correctly you need to check other writeups because I will skip whole resource part with dynamic analysis.
