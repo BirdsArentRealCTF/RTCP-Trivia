@@ -119,7 +119,7 @@ public final String a() {
 }
 ```
 
-This where I cheat because I didn't extract the resource 2131427328. Instead of extracting it I focused return part. Its calling c method with sb parameter. So I wrote a frida hook to get the parameter. 
+This where I skip because I didn't extract the resource 2131427328. Instead of extracting it I focused return part. Its calling c method with sb parameter. So I wrote a frida hook to get the parameter. 
 
 ```
 nx.c cbce23dfcdc7efe826d23bbf3d635d8fd55b6499d16ca8830a973ff57175119f
@@ -198,13 +198,10 @@ Send 	=> {"method": "answer","answer": correctAnswer}
 //---------------------------LOOP 1000 Times---------------------------
 Receive => {"method": "flag","flag":"rtcp{qu1z_4pps_4re_c00l_aeecfa13}"}
 ```
-I hope you can understand idea of this challenge. You can ask any question or recommend better way via discord **enjloezz#7444**. 
+I hope you can understand idea of this challenge. Do you have any questions or suggestion? Feel free to contact via discord. **enjloezz#7444**.
 
 References:
 
 https://github.com/frida/frida/issues/272#issuecomment-299877883
 
 https://11x256.github.io/Frida-hooking-android-part-5/
-
-
-
